@@ -4,3 +4,23 @@
   <app-filenavigation></app-filenavigation>
   <app-code-view [codeStr]="fileContent"></app-code-view>
 </p>
+<div class="common">
+  <h2>C#</h2>
+  <pre><code class="cs">using System.IO.Compression;
+
+#pragma warning disable 414, 3021
+
+namespace MyApplication
+{{ '{' }}
+[Obsolete(&quot;...&quot;)]
+class Program : IInterface
+{{ '{' }}
+    public static List&lt;int&gt; JustDoIt(int count)
+    {{ '{' }}
+        Console.WriteLine($&quot;Hello {{ '{' }}Name{{ '}' }}!&quot;);
+        return new List&lt;int&gt;(new int[] {{ '{' }} 1, 2, 3 {{ '}' }})
+        {{ '}' }}
+        {{ '}' }}
+        {{ '}' }}
+</code></pre>
+</div>
