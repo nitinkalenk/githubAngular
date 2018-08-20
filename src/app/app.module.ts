@@ -1,14 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { GithubviewComponentComponent } from './githubview-component/githubview-component.component';
+import { FilenavigationComponent } from './filenavigation/filenavigation.component';
+import { CodeViewComponent } from './code-view/code-view.component';
+import { DirnavigationComponent } from './dirnavigation/dirnavigation.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GithubviewComponentComponent,
+    FilenavigationComponent,
+    CodeViewComponent,
+    DirnavigationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
