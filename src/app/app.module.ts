@@ -8,6 +8,7 @@ import { GithubviewComponentComponent } from './githubview-component/githubview-
 import { FilenavigationComponent } from './filenavigation/filenavigation.component';
 import { CodeViewComponent } from './code-view/code-view.component';
 import { DirnavigationComponent } from './dirnavigation/dirnavigation.component';
+import { FileDirContainerComponent } from './file-dir-container/file-dir-container.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DirnavigationComponent } from './dirnavigation/dirnavigation.component'
     GithubviewComponentComponent,
     FilenavigationComponent,
     CodeViewComponent,
-    DirnavigationComponent
+    DirnavigationComponent,
+    FileDirContainerComponent
   ],
   imports: [
     BrowserModule,

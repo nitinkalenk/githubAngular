@@ -1,2 +1,6 @@
 <input type="text" name="githubUrl" [(ngModel)]="githubUrl" />
-<app-githubview-component [sourceUrl]="githubUrl"></app-githubview-component>
+<select [(ngModel)]="fetchType">
+  <option value="0">Lazy</option>
+  <option value="1">Eager</option>
+</select>
+<app-githubview-component [sourceUrl]="githubUrl" *ngIf="githubUrl"></app-githubview-component>

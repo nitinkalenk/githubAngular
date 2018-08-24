@@ -1,0 +1,8 @@
+
+<ng-container *ngIf="dirs.length > 0">
+    <app-dirnavigation *ngFor="let dir of dirs" [dir]="dir"></app-dirnavigation>
+</ng-container>
+<ng-container *ngIf="files.length > 0">
+    <app-filenavigation *ngFor="let file of files" [file]="file" (click)="openFile(file)"></app-filenavigation>
+</ng-container>
+
