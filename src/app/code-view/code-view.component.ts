@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { GithubViewDataSharingService } from '../services/github-view-data-sharing-service.service';
 
 @Component({
@@ -6,22 +6,25 @@ import { GithubViewDataSharingService } from '../services/github-view-data-shari
   templateUrl: './code-view.component.html',
   styleUrls: ['./code-view.component.css']
 })
-export class CodeViewComponent implements OnInit {
+export class CodeViewComponent implements OnInit, OnChanges {
 
   @Input()
-  codeStr: string;
+  file: any;
 
-  constructor(private _gitubViewDataSharingService: GithubViewDataSharingService) {
-    console.log('CodeViewComponent constructor');
+  constructor() {
+
   }
 
   ngOnInit() {
-    this._gitubViewDataSharingService.currentOpenedFile.subscribe(file => {
-      console.log('current opened file in app view component is');
-      console.log(file);
-    });
   }
 
-
+  ngOnChanges(changes: SimpleChanges) {
+    for (const propName in changes) {
+      if (propName === 'file') {
+        const file: SimpleChange = changes[propName];
+        console.log(file);
+      }
+    }
+  }
 
 }

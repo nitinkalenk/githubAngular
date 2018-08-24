@@ -12,10 +12,11 @@ export class GithubviewComponentComponent implements OnInit, OnChanges {
 
   @Input()
   sourceUrl: string;
-  fileContent: string;
+  file: any;
   data: any;
 
-  constructor(private _githubService: GithubService) {
+  constructor(private _githubService: GithubService,
+  private _gitubViewDataSharingService: GithubViewDataSharingService) {
     console.log('githubciew component constructor');
   }
 
@@ -23,6 +24,11 @@ export class GithubviewComponentComponent implements OnInit, OnChanges {
     console.log(this.sourceUrl);
     this._githubService.getRepoContents().subscribe(data => {
       this.data = data;
+    });
+    this._gitubViewDataSharingService.currentOpenedFile.subscribe(file => {
+      console.log('current opened file in app view component is');
+      console.log(file);
+      this.file = file;
     });
     /* this._githubService.getFileContent().subscribe(data => {
       console.log(data);

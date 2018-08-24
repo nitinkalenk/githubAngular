@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 export class GithubViewDataSharingService {
 
   // first we create a source on which we will call next to change the value of it
-  private currentOpenedFileSource: BehaviorSubject<any> = new BehaviorSubject(null);
+  private currentOpenedFileSource: BehaviorSubject<any> = new BehaviorSubject(undefined);
   // then we create observable out of source to subscribe whenever the value of source changes
   currentOpenedFile = this.currentOpenedFileSource.asObservable();
 
