@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange, Output } from '@angular/core';
 import { EventEmitter } from 'protractor';
+import { GithubViewDataSharingService } from '../services/github-view-data-sharing-service.service';
 
 @Component({
   selector: 'app-file-dir-container',
@@ -16,7 +17,7 @@ export class FileDirContainerComponent implements OnInit, OnChanges {
   // @Output()
   // currentFileChanged: EventEmitter = new EventEmitter();
 
-  constructor() {
+  constructor(private _githubViewDataSharingService: GithubViewDataSharingService) {
     console.log('FileDirContainerComponent constructor');
    }
 
@@ -47,6 +48,7 @@ export class FileDirContainerComponent implements OnInit, OnChanges {
     console.log('file to open is');
     console.log(file);
     // this.currentFileChanged.emit(file);
+    this._githubViewDataSharingService.changeCurrentOpenedFile(file);
   }
 
 }

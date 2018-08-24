@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GithubViewDataSharingService } from '../services/github-view-data-sharing-service.service';
 
 @Component({
   selector: 'app-code-view',
@@ -10,12 +11,17 @@ export class CodeViewComponent implements OnInit {
   @Input()
   codeStr: string;
 
-  constructor() {
-
+  constructor(private _gitubViewDataSharingService: GithubViewDataSharingService) {
+    console.log('CodeViewComponent constructor');
   }
 
   ngOnInit() {
-
+    this._gitubViewDataSharingService.currentOpenedFile.subscribe(file => {
+      console.log('current opened file in app view component is');
+      console.log(file);
+    });
   }
+
+
 
 }

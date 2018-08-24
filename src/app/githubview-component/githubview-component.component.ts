@@ -1,10 +1,12 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { GithubService } from '../services/github.service';
+import { GithubViewDataSharingService } from '../services/github-view-data-sharing-service.service';
 
 @Component({
   selector: 'app-githubview-component',
   templateUrl: './githubview-component.component.html',
-  styleUrls: ['./githubview-component.component.css']
+  styleUrls: ['./githubview-component.component.css'],
+  providers : [ GithubViewDataSharingService ]
 })
 export class GithubviewComponentComponent implements OnInit, OnChanges {
 
