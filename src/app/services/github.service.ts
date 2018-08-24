@@ -16,12 +16,12 @@ export class GithubService {
   constructor(private http: HttpClient) {
     console.log('gitub service constructor');
     this.httpHeaders = new HttpHeaders();
-    this.httpHeaders.set('Authorization', 'Bearer ee25820b62c1f1827ea6b2462f7915d0e6574097');
+    // this.httpHeaders = this.httpHeaders.set('Authorization', 'Bearer ee25820b62c1f1827ea6b2462f7915d0e6574097');
   }
 
-  getRepoContents(): Observable<any> {
+  getRepoContents(gitHubApiURL: string): Observable<any> {
     console.log(this.httpHeaders);
-    return this.http.get('https://api.github.com/repos/nitinkalenk/snippets/contents', {
+    return this.http.get(gitHubApiURL, {
       headers : this.httpHeaders
     }).pipe(catchError(this.handleError));
   }
@@ -29,13 +29,20 @@ export class GithubService {
   // https://api.github.com/repos/nitinkalenk/snippets/contents/Angular/kudvenkatAngularCrud/angular.json?ref=master
   // tslint:disable-next-line:max-line-length
   // https://github.com/nitinkalenk/snippets/contributors/master/Angular/kudvenkatAngularCrud/src/app/employees/create-employee/create-employee.component.ts
-  getFileContent(): Observable<any> {
+  getFileContent(gitHubApiURL: string): Observable<any> {
     console.log(this.httpHeaders);
   // tslint:disable-next-line:max-line-length
-    return this.http.get('https://api.github.com/repos/nitinkalenk/snippets/contents/Angular/kudvenkatAngularCrud/src/app/app.component.ts?ref=master',
+    return this.http.get(gitHubApiURL,
     {
       headers : this.httpHeaders
     }).pipe(catchError(this.handleError));
+  }
+
+  getDirContents(dirSelfURL: string): Observable<any> {
+    return this.http.get(dirSelfURL,
+      {
+        headers : this.httpHeaders
+      }).pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {

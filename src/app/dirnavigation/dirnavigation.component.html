@@ -1,2 +1,3 @@
-<div>dirnavigation works!</div>
+<div>{{dir.name}}</div>
+<app-file-dir-container *ngIf="innerDirs?.length > 0" [data]="innerDirs"></app-file-dir-container>
 

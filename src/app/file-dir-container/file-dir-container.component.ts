@@ -1,6 +1,8 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange, Output } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange, Output, ViewChild,
+   ViewChildren, QueryList } from '@angular/core';
 import { EventEmitter } from 'protractor';
 import { GithubViewDataSharingService } from '../services/github-view-data-sharing-service.service';
+import { DirnavigationComponent } from '../dirnavigation/dirnavigation.component';
 
 @Component({
   selector: 'app-file-dir-container',
@@ -14,6 +16,8 @@ export class FileDirContainerComponent implements OnInit, OnChanges {
   dirs = [];
   files = [];
 
+  @ViewChildren(DirnavigationComponent)
+  private dirnavigationComps: QueryList<DirnavigationComponent>;
   // @Output()
   // currentFileChanged: EventEmitter = new EventEmitter();
 
@@ -49,6 +53,22 @@ export class FileDirContainerComponent implements OnInit, OnChanges {
     console.log(file);
     // this.currentFileChanged.emit(file);
     this._githubViewDataSharingService.changeCurrentOpenedFile(file);
+  }
+
+  expandDir(dir: any, index: number): void {
+    const dirNavCompsArray = this.dirnavigationComps.toArray();
+    const dirNavComp: DirnavigationComponent = dirNavCompsArray[index];
+    dirNavComp.expandCurrentDir();
+  }
+
+  getRandomColor() {
+    const colors = ['red', 'bule', 'green', 'brown', 'cyan'];
+
+    let randomNum = Math.random() * 10;
+    if (randomNum > 5) {
+      randomNum = 10 - randomNum;
+    }
+    return colors[randomNum];
   }
 
 }

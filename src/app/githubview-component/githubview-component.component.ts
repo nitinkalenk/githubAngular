@@ -22,7 +22,7 @@ export class GithubviewComponentComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     console.log(this.sourceUrl);
-    this._githubService.getRepoContents().subscribe(data => {
+    this._githubService.getRepoContents('https://api.github.com/repos/nitinkalenk/snippets/contents').subscribe(data => {
       this.data = data;
     });
     this._gitubViewDataSharingService.currentOpenedFile.subscribe(file => {
