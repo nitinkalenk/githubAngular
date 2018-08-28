@@ -1,6 +1,9 @@
-<div *ngIf="file">{{file.name}}</div>
-<pre *ngIf="fileContent">
-  <code>
+<button (click)="prettyPrint()">pretty</button>
+<div *ngIf="file" class="yoverflow">{{file.name}}
+
+<pre *ngIf="fileContent" class="prettyprint" contenteditable="true">
+
     {{fileContent}}
-  </code>
+
 </pre>
+</div>

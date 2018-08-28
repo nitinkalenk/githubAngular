@@ -55,20 +55,6 @@ export class FileDirContainerComponent implements OnInit, OnChanges {
     this._githubViewDataSharingService.changeCurrentOpenedFile(file);
   }
 
-  expandDir(dir: any, index: number): void {
-    const dirNavCompsArray = this.dirnavigationComps.toArray();
-    const dirNavComp: DirnavigationComponent = dirNavCompsArray[index];
-    dirNavComp.expandCurrentDir();
-  }
 
-  getRandomColor() {
-    const colors = ['red', 'bule', 'green', 'brown', 'cyan'];
-
-    let randomNum = Math.random() * 10;
-    if (randomNum > 5) {
-      randomNum = 10 - randomNum;
-    }
-    return colors[randomNum];
-  }
 
 }

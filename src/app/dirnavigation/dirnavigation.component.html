@@ -1,4 +1,3 @@
 
-<div><span class="glyphicon glyphicon-chevron-down"></span>{{dir.name}}</div>
-<app-file-dir-container *ngIf="innerDirs?.length > 0" [data]="innerDirs"></app-file-dir-container>
-
+<div (click)="toggleDir()"><i class="fa" [class.fa-arrow-right]="!expanded" [class.fa-arrow-down]="expanded"></i>{{dir.name}}</div>
+<app-file-dir-container *ngIf="expanded && innerDirs?.length > 0" [data]="innerDirs"></app-file-dir-container>
