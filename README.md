@@ -41,6 +41,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 https://github.com/nitinkalenk/snippets
 
 
-npm uninstall -g angular-cli @angular/cli
-npm cache clean
-npm install -g @angular/cli@latest
+1. `npm uninstall -g angular-cli @angular/cli`
+2. `npm cache clean`
+3. `npm install -g @angular/cli@latest`
