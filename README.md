@@ -35,8 +35,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `cd githubAngular`
 5. Run following commands
 `npm install`
-6. Run following command
-`npm i -g @angular/cli@latest`
 7. Run following command
 `ng serve -o`
 6. enter following url in input box provided
