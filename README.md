@@ -39,3 +39,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `ng serve -o`
 6. enter following url in input box provided
 https://github.com/nitinkalenk/snippets
+
+
+npm uninstall -g angular-cli @angular/cli
+npm cache clean
+npm install -g @angular/cli@latest
