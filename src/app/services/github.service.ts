@@ -16,7 +16,7 @@ export class GithubService {
   constructor(private http: HttpClient) {
     console.log('gitub service constructor');
     this.httpHeaders = new HttpHeaders();
-    this.httpHeaders = this.httpHeaders.set('Authorization', 'Bearer 5c0c7d9f2bb17bc64283ada0dc5879a1e1b1528a');
+    // this.httpHeaders = this.httpHeaders.set('Authorization', 'Bearer 5c0c7d9f2bb17bc64283ada0dc5879a1e1b1528a');
   }
 
   getRepoContents(gitHubApiURL: string): Observable<any> {

@@ -1,5 +1,6 @@
-.yoverflow{
-  width :800px;
-  height : 85vh;
-  overflow-y: scroll;
+
+pre.prettyprint{
+  width: auto;
+  overflow: auto;
+  height: 100%;
 }

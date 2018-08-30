@@ -1,10 +1,17 @@
-.conColor{
 
-
-
-    background: #2f3640;
-    font-family: Menlo,Bitstream Vera Sans Mono,DejaVu Sans Mono,Monaco,Consolas,monospace;
-    color: rgb(232, 232, 232);
-
-
+ .box{
+  height : 85%;
+  width: 100%;
+  margin:0 !important;
+  padding:0 !important;
+}
+.sideBarBox{
+  height : 100%;
+  overflow: auto;
+  white-space: nowrap;
+  padding : 0;
+}.codeViewBox{
+  height : 100%;
+  white-space: nowrap;
+  padding: 0;
 }

@@ -7,12 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   githubUrl: string;
-  // 0 for lazy and 1 for eager
-  fetchType: number;
 
   ngOnInit() {
     this.githubUrl = 'https://github.com/nitinkalenk/snippets';
-    this.fetchType = 1;
   }
 
 }
