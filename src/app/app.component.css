@@ -13,3 +13,6 @@
 input:focus, textarea:focus {
   outline: none;
 }
+.infoDiv{
+  margin: 0 auto;
+}
