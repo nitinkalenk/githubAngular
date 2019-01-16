@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from
 import { GithubViewDataSharingService } from '../services/github-view-data-sharing-service.service';
 import { GithubService } from '../services/github.service';
 import { HttpClientJsonpModule } from '@angular/common/http';
-declare var PR: any;
+declare var hljs: any;
 
 @Component({
   selector: 'app-code-view',
