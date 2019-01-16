@@ -26,4 +26,4 @@ What about NavigationComponent?.
         and here is the crux of solution, I have developed one another component FileDirContainerComponent  
         ![](images/container-component.jpg)  
         which will act as parent for file and directory components..So in this case initially, FileDirContainerComponent will be rendered which contains files and directory component and on click of any directory, directory component will then contain another FileDirContainerComponent as a child which again may contain file and directory component related to clicked directory.....  
-        ![](images/nested-component.jpg)  
+        ![](images/nested-component.png)  
