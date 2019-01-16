@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { GithubViewDataSharingService } from '../services/github-view-data-sharing-service.service';
 import { GithubService } from '../services/github.service';
+import { HttpClientJsonpModule } from '@angular/common/http';
 declare var PR: any;
 
 @Component({
@@ -26,25 +27,18 @@ export class CodeViewComponent implements OnInit, OnChanges {
       if (propName === 'file') {
         const file: SimpleChange = changes[propName];
         this.file = file.currentValue;
-        console.log('file in code view');
-        console.log(file.currentValue);
         this.fileContent = '';
         if (this.file !== undefined) {
           this._githubService.getFileContent(this.file._links.self).subscribe(data => {
-            console.log(data);
             this.fileContent = window.atob(data.content);
-
-            console.log('file Contents are');
-            console.log(this.fileContent);
+            setTimeout(() => {
+              const block = document.querySelector('pre code');
+              hljs.highlightBlock(block);
+            }, 0);
         });
         }
 
       }
     }
   }
-
-  prettyPrint() {
-    PR.prettyPrint();
-  }
-
 }

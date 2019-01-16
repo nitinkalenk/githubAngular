@@ -22,13 +22,9 @@ export class FileDirContainerComponent implements OnInit, OnChanges {
   // currentFileChanged: EventEmitter = new EventEmitter();
 
   constructor(private _githubViewDataSharingService: GithubViewDataSharingService) {
-    console.log('FileDirContainerComponent constructor');
    }
 
   ngOnInit() {
-    console.log('data is');
-    console.log(this.data);
-    const self = this;
     this.data.forEach(function(item) {
       if (item.type === 'dir') {
         this.dirs.push(item);
@@ -42,16 +38,11 @@ export class FileDirContainerComponent implements OnInit, OnChanges {
     for (const propName in simpleChanges) {
       if (propName === 'data') {
         const simpleChange: SimpleChange = simpleChanges[propName];
-        console.log(simpleChange.previousValue);
-        console.log(simpleChange.currentValue);
       }
     }
   }
 
   openFile(file: any) {
-    console.log('file to open is');
-    console.log(file);
-    // this.currentFileChanged.emit(file);
     this._githubViewDataSharingService.changeCurrentOpenedFile(file);
   }
 

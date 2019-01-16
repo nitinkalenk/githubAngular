@@ -1,8 +1,9 @@
 
-<div class="upperBox" style="background-color: #C0C0C0">
-  <input type="text" name="githubUrl" [(ngModel)]="githubUrl" />
+<div class="upperBox">
+  <input type="text" name="githubUrl"  class="inputSearch" placeholder="Enter GitHub Repo URL to open editor view.." [(ngModel)]="githubUrl" />
 </div>
+<app-githubview-component [sourceUrl]="githubUrl" *ngIf="githubUrl"></app-githubview-component>
+<h4>You can even use the Github Repo URL of same project hosted at..</h4>
+<h4>https://github.com/nitinkalenk/githubAngular</h4>
 
-  <app-githubview-component [sourceUrl]="githubUrl" *ngIf="githubUrl"></app-githubview-component>
-
-
+<h5>Just copy and paste above URL in textbox...</h5>

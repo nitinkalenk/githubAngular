@@ -1,6 +1,6 @@
 
- .box{
-  height : 85%;
+.box{
+  height : 90%;
   width: 100%;
   margin:0 !important;
   padding:0 !important;
@@ -10,8 +10,13 @@
   overflow: auto;
   white-space: nowrap;
   padding : 0;
-}.codeViewBox{
+  background-color: #3c4048;
+  color: white;
+  font-size: 1.2em;
+}
+.codeViewBox{
   height : 100%;
   white-space: nowrap;
   padding: 0;
+  background-color: #282c34
 }

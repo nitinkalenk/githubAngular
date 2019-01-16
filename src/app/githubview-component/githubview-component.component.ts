@@ -17,33 +17,26 @@ export class GithubviewComponentComponent implements OnInit, OnChanges {
 
   constructor(private _githubService: GithubService,
   private _gitubViewDataSharingService: GithubViewDataSharingService) {
-    console.log('githubciew component constructor');
+
   }
 
   ngOnInit() {
-    console.log(this.sourceUrl);
-    this._githubService.getRepoContents('https://api.github.com/repos/nitinkalenk/snippets/contents').subscribe(data => {
+    const userAndRepo = this.sourceUrl.replace('https://github.com/', '');
+    const user = userAndRepo.split('/')[0];
+    const repo = userAndRepo.split('/')[1];
+    this._githubService.getRepoContents('https://api.github.com/repos/' + user + '/' + repo + '/contents').subscribe(data => {
       this.data = data;
     });
     this._gitubViewDataSharingService.currentOpenedFile.subscribe(file => {
-      console.log('current opened file in app view component is');
-      console.log(file);
       this.file = file;
     });
-    /* this._githubService.getFileContent().subscribe(data => {
-      console.log(data);
-      this.fileContent = window.atob(data.content);
-      console.log('file Contents are');
-      console.log(this.fileContent);
-    }); */
+
   }
 
   ngOnChanges(changes: SimpleChanges) {
     for (const propName in changes) {
       if (propName === 'sourceUrl') {
         const change: SimpleChange = changes[propName];
-        console.log(change.previousValue);
-        console.log(change.currentValue);
       }
 
     }
