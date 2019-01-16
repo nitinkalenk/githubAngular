@@ -3,6 +3,7 @@ A code viewer designed exclusively to read code from github repo as in visual st
 Live Demo : https://nitinkalenk.github.io/githubAngular/
 
 Working Example : 
+
 ![](working.gif)
 
 Component Architecture : 
