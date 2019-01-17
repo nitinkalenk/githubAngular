@@ -21,10 +21,8 @@ export class DirnavigationComponent implements OnInit {
 
 
   toggleDir() {
-    console.log(`expanding dir named ${this.dir.name}`);
     this.expanded = !this.expanded;
     this._githubService.getDirContents(this.dir._links.self).subscribe(dirContent => {
-      console.log(dirContent);
       this.innerDirs = dirContent;
     });
   }

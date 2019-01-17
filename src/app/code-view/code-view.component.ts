@@ -9,17 +9,13 @@ declare var hljs: any;
   templateUrl: './code-view.component.html',
   styleUrls: ['./code-view.component.css']
 })
-export class CodeViewComponent implements OnInit, OnChanges {
+export class CodeViewComponent implements OnChanges {
 
   @Input()
   file: any;
   fileContent: string;
 
   constructor(private _githubService: GithubService) {
-
-  }
-
-  ngOnInit() {
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -31,14 +27,17 @@ export class CodeViewComponent implements OnInit, OnChanges {
         if (this.file !== undefined) {
           this._githubService.getFileContent(this.file._links.self).subscribe(data => {
             this.fileContent = window.atob(data.content);
-            setTimeout(() => {
-              const block = document.querySelector('pre code');
-              hljs.highlightBlock(block);
-            }, 0);
+            this.highlightBlock();
         });
         }
-
       }
     }
+  }
+
+  highlightBlock() {
+    setTimeout(() => {
+      const block = document.querySelector('pre code');
+      hljs.highlightBlock(block);
+    }, 0);
   }
 }

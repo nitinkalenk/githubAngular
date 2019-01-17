@@ -9,17 +9,12 @@ import { DirnavigationComponent } from '../dirnavigation/dirnavigation.component
   templateUrl: './file-dir-container.component.html',
   styleUrls: ['./file-dir-container.component.css']
 })
-export class FileDirContainerComponent implements OnInit, OnChanges {
+export class FileDirContainerComponent implements OnInit {
 
   @Input()
   data: any;
   dirs = [];
   files = [];
-
-  @ViewChildren(DirnavigationComponent)
-  private dirnavigationComps: QueryList<DirnavigationComponent>;
-  // @Output()
-  // currentFileChanged: EventEmitter = new EventEmitter();
 
   constructor(private _githubViewDataSharingService: GithubViewDataSharingService) {
    }
@@ -32,14 +27,6 @@ export class FileDirContainerComponent implements OnInit, OnChanges {
         this.files.push(item);
       }
     }, this);
-  }
-
-  ngOnChanges(simpleChanges: SimpleChanges) {
-    for (const propName in simpleChanges) {
-      if (propName === 'data') {
-        const simpleChange: SimpleChange = simpleChanges[propName];
-      }
-    }
   }
 
   openFile(file: any) {

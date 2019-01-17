@@ -8,7 +8,7 @@ import { GithubViewDataSharingService } from '../services/github-view-data-shari
   styleUrls: ['./githubview-component.component.css'],
   providers : [ GithubViewDataSharingService ]
 })
-export class GithubviewComponentComponent implements OnInit, OnChanges {
+export class GithubviewComponentComponent implements OnInit {
 
   @Input()
   sourceUrl: string;
@@ -31,15 +31,6 @@ export class GithubviewComponentComponent implements OnInit, OnChanges {
       this.file = file;
     });
 
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    for (const propName in changes) {
-      if (propName === 'sourceUrl') {
-        const change: SimpleChange = changes[propName];
-      }
-
-    }
   }
 
 }

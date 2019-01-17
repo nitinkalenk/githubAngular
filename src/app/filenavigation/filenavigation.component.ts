@@ -6,18 +6,9 @@ import { EventEmitter } from 'events';
   templateUrl: './filenavigation.component.html',
   styleUrls: ['./filenavigation.component.css']
 })
-export class FilenavigationComponent implements OnInit {
+export class FilenavigationComponent {
 
   @Input()
   file: any;
-
-  constructor() {
-    console.log('file navigation constructor');
-  }
-
-  ngOnInit() {
-    console.log('file is');
-    console.log(this.file);
-  }
 
 }
