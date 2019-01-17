@@ -13,7 +13,7 @@ Basically there are two basic components you can see from the above demo or exam
   
 First we will discuss about code view component
 #### CodeViewComponent(code-view.component.ts) :-
-![](images/code-view-component.jpg)  Its a simple component which recieves file data and on the basis of data and github api, it will fetch the contents of file and is also responsible to prettify the code according to programing language  
+![](images/code-view-component.jpg)    Its a simple component which recieves file data and on the basis of data and github api, it will fetch the contents of file and is also responsible to prettify the code according to programing language  
 For example, above component is displaying code contents of html file by beautifying its tags and proper alignment  
   
 What about NavigationComponent?.  
