@@ -11,11 +11,9 @@ export class GithubViewDataSharingService {
 
 
   constructor() {
-    console.log('FileDirContainerDataSharingService constructor');
   }
 
   changeCurrentOpenedFile(file: any) {
-    console.log('changing current opened file to ' + file);
     this.currentOpenedFileSource.next(file);
   }
 
